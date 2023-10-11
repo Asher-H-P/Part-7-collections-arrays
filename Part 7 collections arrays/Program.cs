@@ -11,47 +11,59 @@ namespace Part_7_collections_arrays
         static void Main(string[] args)
         {
             Random generator = new Random();
-            bool done = false;
-            int[] num = new int [30];
-            while (!done)
+            int[] numbers = new int [30];
+            int evenNum = 0;
+            for (int i = 0; i < numbers.Length; i++)
             {
-                
-                num[1] = generator.Next(1, 101);
-                num[2] = generator.Next(1, 101);
-                num[3] = generator.Next(1, 101);
-                num[4] = generator.Next(1, 101);
-                num[5] = generator.Next(1, 101);
-                num[6] = generator.Next(1, 101);
-                num[7] = generator.Next(1, 101);
-                num[8] = generator.Next(1, 101);
-                num[9] = generator.Next(1, 101);
-                num[10] = generator.Next(1, 101);
-                num[11] = generator.Next(1, 101);
-                num[12] = generator.Next(1, 101);
-                num[13] = generator.Next(1, 101);
-                num[14] = generator.Next(1, 101);
-                num[15] = generator.Next(1, 101);
-                num[16] = generator.Next(1, 101);
-                num[17] = generator.Next(1, 101);
-                num[18] = generator.Next(1, 101);
-                num[19] = generator.Next(1, 101);
-                num[20] = generator.Next(1, 101);
-                num[21] = generator.Next(1, 101);
-                num[22] = generator.Next(1, 101);
-                num[23] = generator.Next(1, 101);
-                num[24] = generator.Next(1, 101);
-                num[25] = generator.Next(1, 101);
-                num[26] = generator.Next(1, 101);
-                num[27] = generator.Next(1, 101);
-                num[28] = generator.Next(1, 101);
-                num[29] = generator.Next(1, 101);
-                
-                done = true;
+                numbers[i] = generator.Next(1, 101);
+                Console.Write(numbers[i] + " ");
             }
-            for (int i = 0; i <= 30; i++)
+            Console.WriteLine();
+            Console.WriteLine();
+
+            for (int j = 0; j < numbers.Length; j++)
             {
-                Console.Write(num[generator.Next(0, 31)] + ", ");
+                numbers[j] = generator.Next(1, 101);
+                Console.Write(numbers[j] + " ");
+                if (numbers[j] % 2 == 0)
+                {
+                    evenNum += 1;
+                }
             }
+            Console.WriteLine();
+            Console.WriteLine($"There are {evenNum} even numbers.");
+            Console.WriteLine();
+            Console.WriteLine();
+            for (int k = 0;  k < numbers.Length; k++)
+            {
+                numbers[k] = generator.Next(1, 101);
+                if (numbers[k] % 5 == 0)
+                {
+                    Console.Write(numbers[k] + " ");
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            for (int l = 0; l < numbers.Length; l += 2)
+            {
+                numbers[l] = generator.Next(1, 101);
+                numbers[l] *= 2;
+                Console.Write(numbers[l] + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            for (int m = 0; m < numbers.Length; m++)
+            {
+                Console.Write(numbers[m] + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            Array.Sort(numbers);
+            Console.WriteLine($"Min: {numbers[0]} Max: {numbers[numbers.Length - 1]}");
+            //You get an error.
+            //Won't work.
+            //Gets set to zero.
+            //No.
         }
     }
 }
